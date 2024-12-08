@@ -1,0 +1,92 @@
+<html><head><base href=""><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="cards/Suit=Other, Number=Back Blue.png">
+    <link rel="preload" as="image" href="cards/Suit=Hearts, Number=Ace.png">
+    <link rel="preload" as="image" href="cards/Suit=Spades, Number=Ace.png">
+    <link rel="preload" as="image" href="cards/Suit=Diamonds, Number=Ace.png">
+    <link rel="preload" as="image" href="cards/Suit=Clubs, Number=Ace.png">
+    <link rel="preload" as="image" href="/background.jpg" />
+    <link rel="preload" as="image" href="/chip.png" />
+  <link rel="stylesheet" href="/style.css">  
+  </head><body>
+      <div class="menu-container" id="main-menu">
+        <h1 class="menu-title">Blackjack</h1>
+        <div class="player-chips">
+          <h3>Your Chips: <span id="total-chips">∞</span></h3>
+        </div>
+        
+        <div class="menu-buttons">
+          <button class="menu-button" id="show-instructions-button">Instructions</button>
+          <button class="menu-button" id="start-game-button">Start Game</button>
+        </div>
+    
+        <div class="instructions" id="instructions-panel">
+          <h3>How to Play</h3>
+          <ul>
+            <li>The goal is to have a hand value as close to 21 as possible without exceeding it.</li>
+            <li>Each player is dealt two cards to start.</li>
+            <li>Face cards (Jack, Queen, King) are worth 10.</li>
+            <li>Aces are worth 1 or 11, whichever is more advantageous.</li>
+            <li>Number cards are worth their face value.</li>
+          </ul>
+          
+          <h3>Game Rules</h3>
+          <ul>
+            <li>Click "Hit" to draw another card.</li>
+            <li>Click "Stand" to keep your current hand.</li>
+            <li>The dealer must draw cards until reaching 17 or higher.</li>
+          </ul>
+          
+          <h3>Winning Conditions</h3>
+          <ul>
+            <li>If your hand exceeds 21, you lose (bust).</li>
+            <li>If the dealer busts, you win.</li>
+            <li>If your hand is closer to 21 than the dealer's, you win.</li>
+            <li>If it's a tie, it's a push (no one wins).</li>
+          </ul>
+          
+          <button class="menu-button" id="back-to-menu">Back to Menu</button>
+        </div>
+      </div>
+      <div class="game-container" id="game-table" style="display: none;">
+        <div class="betting-phase" id="betting-phase">
+          <h2 class="phase-title">Place Your Bets</h2>
+          <div class="player-chips">
+            <h3>Your Chips: <span id="total-chips">∞</span></h3>
+          </div>
+          <div class="betting-controls">
+            <div class="chip-stack">
+              <button class="chip" data-value="10">10</button>
+              <button class="chip" data-value="25">25</button>
+              <button class="chip" data-value="50">50</button>
+              <button class="chip" data-value="100">100</button>
+            </div>
+            <div class="bet-info">
+              <h3>Current Bet: <span id="current-bet">0</span></h3>
+              <button id="clear-bet">Clear Bet</button>
+              <button id="place-bet">Place Bet</button>
+            </div>
+          </div>
+        </div>
+        <div class="gameplay-phase" id="gameplay-phase" style="display: none;">
+          <div class="game-table">
+            <h2>Dealer's Hand</h2>
+            <div class="cards" id="dealer-cards"></div>
+            <div id="dealer-score" class="score"></div>
+            
+            <h2>Your Hand</h2>
+            <div class="cards" id="player-cards"></div>
+            <div id="player-score" class="score"></div>
+            
+            <div class="controls">
+              <button id="hit">Hit</button>
+              <button id="stand">Stand</button>
+              <button id="new-game">New Game</button>
+            </div>
+            <div class="message" id="message"></div>
+          </div>
+        </div>
+      </div> 
+    <script src="script.js"></script>
+  </body></html>
